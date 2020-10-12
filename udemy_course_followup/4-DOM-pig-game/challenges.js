@@ -17,15 +17,18 @@ The player looses his current score when one of them is a 1.
 
 var scores, roundScore, activePlayer, gamePlaying, lastDice;
 
+//Initial setup fuction
 function init() {
     scores = [0, 0];
     roundScore = 0;
     activePlayer = 0;
     gamePlaying = true;
 
+    //Let dices to be hidden on the screen
     document.getElementById('dice-1').style.display = 'none';
     document.getElementById('dice-2').style.display = 'none';
 
+    //
     document.getElementById('score-0').textContent = '0';
     document.getElementById('score-1').textContent = '0';
     document.getElementById('current-0').textContent = '0';
