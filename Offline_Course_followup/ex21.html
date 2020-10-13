@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+	window.onload = function() {
+		document.getElementById('btnOk').onclick = function() {
+			var kor = parseInt(document.getElementById('kor').value);
+			var eng = parseInt(document.getElementById('eng').value);
+			var math = parseInt(document.getElementById('math').value);
+			var tot = kor + eng + math;
+			var avg = tot/3;
+			
+			var r ="";
+			if(avg > 90) {
+				r = '수! 축하드립니다!';
+			} else if(avg > 80) {
+				r ='우! 노력하셨군요.';
+			} else if (avg > 70){
+				r ='미!';
+			}else if (avg > 60) {
+				r ='양!';
+			}else {
+				r ='가';
+			}
+			document.getElementById('tot').innerHTML = tot;
+			document.getElementById('avg').innerHTML = avg;
+			document.getElementById('result').innerHTML = r;
+		};		
+	}
+/* 
+	 function pro(){
+			var kor = parseInt(document.getElementById('kor').value);
+			var eng = parseInt(document.getElementById('eng').value);
+			var math = parseInt(document.getElementById('math').value);
+			
+			if(isNaN(kor)||isNaN(eng)||isNaN(kor)){
+				alert('숫자를 입력하시오!');
+				return; 
+			}
+			
+			var finalAvg = eval(kor + eng + math)/3;
+			console.log(finalAvg);
+			document.getElementById('result').textContent = finalAvg;
+			
+			if(finalAvg < 30) {
+				alert('가!ㅉㅉ');
+			}else if(30 < finalAvg && finalAvg > 50) {
+				alert('양!ㅉㅉ');
+			} 
+		} */
+
+</script>
+</head>
+
+	<body>
+	<h2>중간고사 결과산출 프로그램</h2>
+	<hr>	
+	이름: <input type="text"><br>
+	국어: <input id="kor" type="text"><br>
+	영어: <input id="eng" type="text"><br>
+	수학: <input id="math" type="text"><br>
+	총점: <span id="tot"></span><br>
+	평균: <span id="avg"></span><br>
+	결과: <span id="result"></span><br>
+	<button id="btnOk">확인</button>
+	
+	</body>
+</html>

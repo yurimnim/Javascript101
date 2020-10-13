@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>새창열기</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var new_window;
+	
+	$('#btnNew').click(function(){
+		new_window = window.open('','','width=400,height=300');
+	});
+	
+	$('#btnAdd').click(function(){
+		new_window.document.write('<h2>HELLO!!AGAIN...</h2>');
+	});
+});
+</script>
+</head>
+
+<body>
+	<button id="btnNew">새창만들기</button>
+	<button id= "btnAdd">새창에 노드 추가하기</button>
+</body>
+</html>

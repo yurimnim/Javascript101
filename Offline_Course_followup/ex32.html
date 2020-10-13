@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>유니폼 바꿔주기</title>
+<script type="text/javascript">
+
+var arr = [{no:1,fname:'uniform1.jpg',name:'유니폼1',qty: 5,price: 23000},
+		{no:2,fname:'uniform2.jpg', name:'유니폼2', qty: 10, price: 13000},
+		{no:3, fname:'uniform3.jpg', name:'유니폼3',qty: 11,price: 32000},
+		{no:4, fname:'uniform14.jpg',name:'유니폼4',qty: 13,price: 24000},
+		{no:5, fname:'uniform15.jpg',name:'유니폼5',qty:20,price: 54000}];
+		
+var n = 0;
+
+        window.onload = function(){
+        	var img = document.getElementById('uniform');
+        	var no = document.getElementById('no');
+        	var name = document.getElementById('name');
+        	var qty = document.getElementById('qty');
+        	var price = document.getElementById('price');
+    
+        	setInterval(function(){
+        		item = arr[n++];
+        		img.src = '../' + item.fname;
+        		no.innerHTML=item.no;
+        		name.innerHTML=item.name;
+        		qty.innerHTML=item.qty;
+        		price.innerHTML=item.price;
+        		if(n >= arr.lenth) {
+        			n = 0;
+        		}
+        	},700);	
+        }
+    </script>
+</head>
+
+<body>
+    <img id="uniform" src="" width="20%"><br>
+    상품번호 : <span id="no"></span><br>
+    상품명 : <span id="name"></span><br>
+    수량 : <span id="qty"></span><br>
+    가격: <span id="price"></span><br>
+</body>
+
+</html>

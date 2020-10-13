@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AJAX 101</title>
+<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+<script type="text/javascript">
+window.onload = function () {
+	document.getElementById('btnOk').onclick = function() {
+		var request = new XMLHttpRequest();
+		request.open('get','/listMember?a=3',false);
+		request.send();
+		document.getElementById('name').innerHTML 
+			= request.responseText;
+	};
+}
+
+</script>
+</head>
+<body>
+<h2 id="name"></h2>
+<button id="btnOk">Ajax 통신</button>
+<hr>
+<textarea rows="10" cols="50"></textarea>
+</body>
+
+</html>

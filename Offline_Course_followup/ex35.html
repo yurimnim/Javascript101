@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서객체만들기</title>
+<script type="text/javascript">
+window.onload = function(){
+	document.getElementById('btnAdd').onclick = function(){
+		var h2 = document.createElement('h2');
+		var tx = document.createTextNode('Hello!');
+		h2.appendChild(tx);
+		document.getElementById('result').appendChild(h2);
+	}
+	
+	document.getElementById('btnAddImg').onclick = function(){
+		var img = document.createElement('img');
+		img.src = '../uniform1.jpg';
+		img.width = 200;
+		document.getElementById('result').appendChild(img);
+	}
+}
+
+</script>
+</head>
+
+<body>
+<hr> 
+<div id ="result"></div>
+<hr>
+<button id="btnAdd">노드추가</button>
+<button id="btnAddImg">이미지노드추가</button><br>
+</body>
+
+</html>

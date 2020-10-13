@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>반복문</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+   var book = {               //자바스크립트에서의객체 : json
+         bookid:1,
+         bookname:"축구의 역사",
+         publisher:"굿스포츠",
+         price:7500
+   };
+
+   $(function () {
+      $("#btn").click(function () {
+         $.each(book,function(idx){
+            var li = $("<li></li>").html( idx + " : " + book[idx] );
+            $("#list").append(li);
+         });
+      });
+   });
+</script>
+</head>
+<body>
+
+   <ul id="list"></ul>
+   <hr>
+   <button id="btn">도서 정보 확인</button>
+</body>
+</html>
