@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Javascript:remove</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	var sun = $('#sun');
+	var earth = $('#earth');
+	var moon = $('#moon');
+	
+	$('.item').css('position','absolute');
+	
+	/*
+	$(sun).css('position','absolute');
+	$(earth).css('position','absolute');
+	$(moon).css('position','absolute');
+	*/
+	
+	$(sun).css({
+		left:250 + 'px',
+		top: 200 + 'px'
+	});
+	
+	var earthAngle = 0;
+	var moonAngle = 0;
+	
+	setInterval(function(){
+		var earthLeft = 250 + 150 * Math.cos(earthAngle);		
+		var earthTop = 250 + 150 * Math.sin(earthAngle);
+		var moonLeft = earthLeft + 50 * Math.cos(moonAngle);
+		var moonTop = earthTop + 50 * Math.sin(moonAngle);
+		
+		$(earth).css({
+			left:earthLeft +'px',
+			top: earthTop + 'px'
+		});
+		
+		$(moon).css({
+			left: moonLeft +'px',
+			top: moonTop + 'px'
+		});
+		
+		earthAngle += 0.1;
+		moonAngle += 0.3;
+		
+	},1000/20);
+	
+});
+
+</script>
+</head>
+
+<body>
+	<img class="item" id="sun" alt="sun" src="sun.png" width="7%">
+	<img class="item" id="earth" alt="earth" src="earth.png" width="3%">
+	<img class="item" id="moon" alt="moon" src="moon.png" width="1.5%">
+</html>

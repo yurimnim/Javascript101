@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Javascript:remove</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	$('#addBtn').click(function(){
+				
+		var name = $('#name').val();
+		var age = $('#age').val();
+		var addr = $('#addr').val();
+		
+		var td_1= $('<td></td>').html(name);
+		var td_2= $('<td></td>').html(age);
+		var td_3= $('<td></td>').html(addr);
+		
+		var tr = $('<tr></tr>');
+		
+		$(tr).append(td_1,td_2,td_3);
+		$('#list').append(tr);
+		
+		$(tr).dblclick(function(){
+			$(this).remove();
+		});
+	});
+});
+
+</script>
+</head>
+
+<body>
+<table id="list" border="1" width="70%">
+	<tr>
+		<th>이름</th>
+		<th>나이</th>
+		<th>주소</th>
+	</tr>
+</table>
+<br><br>
+이름: <input type="text" id="name"><br>
+나이: <input type="text" id="age"><br>
+주소: <input type="text" id="addr"><br>
+<button id="addBtn">추가</button>
+</body>
+
+</html>
