@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nodejs Express</title>
+    <link rel="stylesheet" href="blog.css">
+</head>
+
+<body>
+    <div id="contentArea">
+        <div id="innerContentArea">
+            <h1>Blog Post Creator</h1>
+            <form action="/blogInsert" method="post">
+                <h3>Title</h3>
+                <p>
+                    <input type="text" name="title" id="title">
+                </p>
+
+                <h3>content</h3>
+                    <textarea name="content"  rows="20" cols="80"></textarea>
+                <p>
+                    <input type="submit" name="btnSubmit" ic="btnSubmit" value="save">
+                </p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
