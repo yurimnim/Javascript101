@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+ <div id="root"></div>
+</body>
+
+<script type="text/babel">
+  setInterval(() => {
+    const d = new Date()
+    const hour = d.getHours()
+    const min = d.getMinutes()
+    const sec = d.getSeconds()
+    const elem = <div>
+        <h1>{hour}:{min}:{sec}</h1>
+      </div>
+    const root = document.querySelector('#root')
+    ReactDOM.render(elem,root)    
+  }, 1000)
+  
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      body {
+        font-size: 20px;
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+ <div id="root"></div>
+</body>
+<script type="text/babel">
+  function PhotoText(props){
+    const url = 'img/' + props.image + '.jpg'
+    const label = props.label
+    const boxStyle = {
+      border: '3px solid red',
+      margin: '10px',
+      padding: '4px'
+    }
+    return <div>
+        <img src={url} width="128"/>
+        <span>{label}</span>
+      </div>  
+  }
+
+  const arr = <div>
+      <PhotoText image="dogo3" label="dogo1" />
+      <PhotoText image="dogo4" label="dogo2" />
+      <PhotoText image="dogo5" label="dogo3" />
+    </div>
+
+  ReactDOM.render(arr, document.querySelector('#root'))
+</script>
+</html>

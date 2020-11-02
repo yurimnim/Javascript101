@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      body {
+        font-size: 50px;
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+ <div id="disp"></div>
+</body>
+
+<script type="text/babel">
+ setInterval(update, 1000)
+
+ function update() {
+    const now = new Date()
+    const hh = z2(now.getHours())
+    const mm = z2(now.getMinutes())
+    const ss = z2(now.getSeconds())
+    const binStr = hh + mm + ss //025607
+    const style0 = {color:'darkgreen'}
+    const style1 = {color:'lightgreen'}
+    const lines = []
+
+    for(let i = 0; i < binStr.length; i++) {
+      const v = parseInt(binStr.substr(i,1)) //0
+      const bin = "0000" + v.toString(2) //00000
+      const bin8 = bin.substr(bin.length - 4, 4)
+
+      for(let j=0; j<bin8.length; j++) {
+        if(bin8.substr(j,1)==='0') {
+          lines.push(<span style={style0}>○</span>)
+        } else {
+          lines.push(<span style={style1}>●</span>)
+        }
+      }
+      lines.push(<br />)
+    }
+    const disp = document.getElementById('disp')
+    ReactDOM.render(<div>{lines}</div>, disp)
+  }
+
+  const z2 = (n) => {
+     n = String('00' + n)
+    return n.substr(n.length-2, 2)
+  }
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+ <div id="root"></div>
+</body>
+
+<script type="text/babel">
+  function getDOM() {
+    const css1 = {
+      color: 'coral',
+      backgroundColor: "#f0f0ff",
+      fontSize: "2em"
+    }
+
+    const css2 = {
+      color: 'darkgreen',
+      backgroundColor: '#fff0f0',
+      fontSize: '2em'
+    }
+
+    return (
+      <div>
+        <p style={css1}>안녕</p>
+        <p style={css2}>리액트</p>
+      </div>
+    )
+  }
+  ReactDOM.render(getDOM(),document.getElementById('root'))
+  
+</script>
+</html>
