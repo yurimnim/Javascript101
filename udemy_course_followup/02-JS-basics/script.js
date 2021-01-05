@@ -468,3 +468,4 @@ function calcAvg(tips) {
 
 john.average = calcAvg(john.tips);
 console.log(john);
+
